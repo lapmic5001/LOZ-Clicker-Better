@@ -1,0 +1,15 @@
+version 1.1.2
+• deleted the multiple upgrades feature
+
+version 1.1.1
+• tried adding a multiplier for upgrades to buy multiple
+
+version 1.1.0
+• added 11 cool images!
+
+version 1.0.1
+• changed "Sidin" to "Sidon"
+
+version 1.0.0
+• Copied Everything From "SkibidiToiletClickerBetter"
+• used find and replace to change everything to be zelda themed

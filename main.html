@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>LOZClickerBetter</title>
+        <link rel="icon" href="Images/skibidi-toilet-pixelated.png">
+        <style>
+            .rounded{border-radius: 25px;}
+            /*body{cursor: url(cursor.png) 4 12, default}*/
+        </style>
+        
+        
+    </head>
+    
+    <body style="background-color: forestgreen">
+        
+        <p style="font-size: 14">LOZClickerBetter-v1.1.2</p>
+        <h1 style="font-family: cursive">Legend Of Zelda Clicker</h1>
+        <p style="font-family: cursive">Rupees: <span id="score">0</span></p>
+        <!--p style="font-family: cursive">Rebirths: <span id="rebirths">0</span></p-->
+        <img class="rounded" src="Images/bokoblin.jpeg" alt="enemy" width="100" height="100" onclick="clickEnemy()">
+        <br><br><hr>
+        
+        <!--Shop Elements-->
+        
+        <h3 style="font-family: cursive">Shop</h3>
+        
+        
+        
+        <button onclick="buyClickup()" style="background-color:white">
+        <p style="font-family: cursive">Better Sword</p>
+        <hr>
+        <p style="font-family: cursive">Cost: <span id="clickupCost">10</span></p>
+        <p style="font-family: cursive">Amount: <span id="clickupsDisplay">0</span>
+        </p><img src="Images/mastersword.jpeg" alt="sword.png" width="100" height="100"><hr>
+        <p>Increase Your<br> Click Power<br>(+1)
+        </button>
+        
+        <button onclick="buyTulin()" style="background-color: white">
+        <p style="font-family: cursive">Tulin Manifestation</p>
+        <hr>
+        <p style="font-family: cursive">Cost: <span id="tulinCost">10</span></p>
+        <p style="font-family: cursive">Amount: <span id="tulins">0</span>
+        </p><img src="Images/tulin.jpeg" alt="tulin image" width="100" height="100"><hr>
+        <p>Hire a Cameraman to<br>destroy 1 enemy<br>per second for you!</p>
+        </button>
+        
+        <button onclick="buyYunobo()" style="background-color: white">
+        <p style="font-family: cursive">Yunobo Manifestation</p>
+        <hr>
+        <p style="font-family: cursive">Cost: <span id="yunoboCost">100</span></p>
+        <p style="font-family: cursive">Amount: <span id="yunobos">0</span>
+        </p><img src="Images/yunobo.jpeg" alt="yunobo" width="100" height="100"><hr>
+        <p>Hire a Speakerman to<br>destroy 10 enemies<br> per second for you!</p>
+        </button>
+        
+        <button onclick="buySidon()" style="background-color: white">
+        <p style="font-family: cursive">Sidon Manifestation</p>
+        <hr>
+        <p style="font-family: cursive">Cost: <span id="sidonCost">1000</span></p>
+        <p style="font-family: cursive">Amount: <span id="sidons">0</span></p>
+        <img src="Images/sidon.jpeg" alt="sidon" width="100" height="100"><hr>
+        <p>Summon Sidon to<br>100 destroy enemies<br> per second for you!</p>
+        </button>
+        
+        <button style="background-color: white" onclick="cashout()">
+        <p style="font-family: cursive">Cash-Out</p>
+        <hr>
+        <p style="font-family: cursive">
+        Cost: <span id="cashoutCost">1000</span>
+        </p>
+        <p style="font-family: cursive">Gives 1 Token</p>
+        <img src="Images/zonaite.jpeg" alt="cash your money in" width="100" height="100">
+        <hr><p>Buy some tokens<br>with your Rupees!<br>nice!</p></button>
+        
+        <button onclick="rebirth()" style="background-color: white">
+        <p style="font-family: cursive">Rebirth</p>
+        <hr>
+        <p style="font-family: cursive">Cost: <span id="rebirthCost">0</span></p>
+        <p style="font-family: cursive;">Amount: <span id="rebirths">0</span></p>
+        <img src="Images/rebirth.jpeg" alt="rebirth image" width="100" height="100">
+        <hr>
+        <p>Rebirth for<br>more<br> money</p>    
+        </button>
+        
+        
+        <hr>
+        
+        <h2 style="font-family: cursive;">Bossfight</h2>
+<h3 style="font-family: cursive;">Master Kohga</h3>        
+        <img class="rounded" onclick="fightMasterKohga(1)" src=Images/master-kohga.jpeg alt="master kohga" width="150" height="150">
+        <p style="font-family: cursive">Master Kohga Health: <span id=masterKohgaHealth>100</span></p><p style="font-family: cursive">Wins: <span id="masterKohgaWins">0</span></p>
+        
+        <hr>
+        <h3 style="font-family: cursive">The Depths Shop</h3>
+        <p style="font-family: cursive">Zonaite: <span id="tokens">0</span></p>
+        
+        <br>
+        
+        <button style="background-color: white" onclick="buyResearch()"><h4>Research</h4><img src="Images/purah.jpeg" alt="hot purah image" width="100" height="100"><p style="font-family: cursive">Cost: <span id="researchCost">2</span> Zonaite</p><p style="font-family: cursive">Amount: <span id="researchAmount">0</span></p><p>adds to your<br>profit for defeating<br>Master Kohga</p></button>
+        
+        <button style="background-color: white" onclick="buyGlitch()"><h4>Zonai Construct</h4><img src="Images/construct.jpeg" alt="zonai construct" width="120" height="100"><p style="font-family: cursive">Cost: <span id="glitchCost">2</span> Zonaite</p><p style="font-family: cursive">Amount: <span id="glitchAmount">0</span></p><p>does damage to<br>Master Kohga<br>for you! (1 dpc)</p></button>
+        
+        <button style="background-color: white" onclick="buyLink()"><h4>Hire Link</h4><img src="Images/link.jpeg" alt="glitch plungerman" width="100" height="100"><p style="font-family: cursive">Cost: <span id="linkCost">5</span> Zonaite</p><p style="font-family: cursive">Amount: <span id="linkAmount">0</span></p><p>does damage to<br>Master Kohga<br>for you! (10 dpc)</p></button>
+        
+        <button style="background-color: white" onclick="cashin()"><h4>Cash-in</h4><img src="Images/rupee.jpeg" alt="cash your money in" width="100" height="100"><p style="font-family: cursive">Cost: <span id="cashinCost">1</span> Zonaite</p><p style="font-family: cursive">Gives 1000 Rupees</p><p>cash your tokens<br>in for Rupees!<br>nice!</p></button>
+        
+        <br><br><br>
+        <!--devtools
+        <button onclick="dev1()">devtool:moneyadd</button>
+        <button onclick="dev2()">devtool:moneygone</button>
+        <button onclick="dev3()">devtool:unitsgone</button>
+        <button onclick="dev4()">devtool:rebirthsgone</button>
+        <button onclick="dev5()">devtool:tokensadd</button>
+        <button onclick="dev6()">devtool:researchadd</button>
+        <button onclick="dev7()">devtool:eliminategman</button>
+        -->
+        
+        
+        
+        <script>
+        
+        var score = 0;  
+        var tulinCost = 10;
+        var tulins = 0;
+        var yunoboCost = 100;
+        var yunobos = 0;
+        var sidonCost = 1000;
+        var sidons = 0;
+        var rebirths = 0;
+        var rebirthCost = 10000; 
+        var rebirthProfit = rebirths + 1;
+        var masterKohgaHealth = 50;
+        var tokens = 0;
+        var researchCost = 1;
+        var researchAmount = 0;
+        var researchProfit = 0;
+        var pps = 0;
+        var glitchAmount = 0;
+        var glitchCost = 2;
+        var dpc = 1;
+        var masterKohgaWins = 0;
+        var clickups = 1;
+        var clickupsDisplay = 0;
+        var clickupCost = 10;
+        var cashinCost = 1;
+        var cashoutCost = 1000;
+        var upamount = 1;
+        var linkCost = 5;    
+        var linkAmount = 0;
+            
+            
+            
+            
+            
+        
+        function buyClickup() {
+            if (score >= clickupCost) {
+            score = score - clickupCost
+            clickups = clickups + 1
+            clickupsDisplay = clickupsDisplay + 1
+            clickupCost = clickupCost * 2
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("clickupsDisplay").innerHTML = clickupsDisplay;
+            document.getElementById("clickupCost").innerHTML = clickupCost;
+            document.getElementById("ppc").innerHTML = clickups
+            }
+        }
+            
+        function buyTulin() {
+            if (score >= tulinCost) {
+            score = score - tulinCost;
+            tulins = tulins + 1;
+            tulinCost = tulinCost + 10;
+            pps = pps + 1;
+            
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("tulinCost").innerHTML = tulinCost;
+            document.getElementById("tulins").innerHTML = tulins;
+            }
+        }
+            
+        function buyYunobo() {
+            if (score >= yunoboCost) {
+            score = score - yunoboCost;
+            yunobos = yunobos + 1;
+            yunoboCost = yunoboCost + 50;
+            pps = pps + 10;
+            
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("yunoboCost").innerHTML = yunoboCost;
+            document.getElementById("yunobos").innerHTML = yunobos;
+            }
+        }
+            
+        function buySidon() {
+            if (score >= sidonCost) {
+            score = score - sidonCost;
+            sidons = sidons + 1;
+            sidonCost = sidonCost + 500;
+            pps = pps + 100;
+            
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("sidonCost").innerHTML = sidonCost;
+            document.getElementById("sidons").innerHTML = sidons;
+            }
+        }   
+            
+        function rebirth() {
+            if (score >= rebirthCost) {
+            score = 0;
+            rebirths = rebirths + 1;
+            rebirthProfit = rebirths + 1;
+            rebirthCost = rebirthCost + 10000    
+            sidons = 0;
+            yunobos = 0;
+            tulins = 0; 
+            pps = 0;
+            clickups = 1;
+            clickupsDisplay = 0;
+            tulinCost = 10;
+            yunoboCost = 100;
+            sidonCost = 1000;
+            clickupCost = 10;
+            
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("rebirthCost").innerHTML = rebirthCost;
+            document.getElementById("rebirths").innerHTML = rebirths;
+            document.getElementById("clickupsDisplay").innerHTML = clickupsDisplay
+            document.getElementById("tulinCost").innerHTML = tulinCost;
+            document.getElementById("yunoboCost").innerHTML = yunoboCost;
+            document.getElementById("sidonCost").innerHTML = sidonCost;
+            document.getElementById("clickupCost").innerHTML = clickupCost
+            }
+        }     
+        
+            
+        
+                     
+                     
+        function buyResearch() {
+            if (tokens >= researchCost) {
+            tokens = tokens - researchCost
+            researchAmount = researchAmount + 1
+            document.getElementById("tokens").innerHTML = tokens;
+            document.getElementById("researchCost").innerHTML = researchCost;
+            document.getElementById("researchs").innerHTML = researchs;
+            }
+        }
+            
+        function buyGlitch()    {
+            if (tokens >= glitchCost) {
+            tokens = tokens - glitchCost
+            glitchAmount = glitchAmount + 1
+            dpc = dpc + 1
+            
+            }
+            document.getElementById("glitchAmount").innerHTML = glitchAmount;
+        }    
+        
+            
+            
+        function buyLink() {
+            if (tokens >= linkCost)
+            tokens = tokens - linkCost
+            linkAmount = linkAmount + 1
+            dpc = dpc + 10
+        }   
+        
+        
+        
+        function dev1() {
+            addToScore(1000000)
+        }
+        
+        function dev2() {
+            score = 0
+        }
+        
+        function dev3() {
+            sidons = 0
+            yunobos = 0
+            tulins = 0
+            pps = 0
+        }    
+            
+        function dev4() {
+            rebirths = 0
+            rebirthProfit = 0
+        } 
+            
+        function dev5() {
+            addToTokens(100)
+        }
+        
+        function dev6() {
+            researchAmount = researchAmount + 1
+        }    
+                
+        function dev7() {
+            masterKohgaHealth = masterKohgaHealth - 100
+        }   
+           
+            
+        function addToScore(amount) {
+            score = score + amount*rebirthProfit
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("tokens").innerHTML = tokens;
+        }
+            
+            
+        function clickEnemy() {
+            score = score + clickups;
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("ppc").innerHTML = clickups;
+            
+        }
+            
+        function addToTokens(amount) {
+            tokens = tokens + amount
+            document.getElementById("tokens").innerHTML = tokens;
+        
+        
+        }
+        
+        
+            
+        function cashin() {
+            if (tokens >= cashinCost) {
+                tokens = tokens - cashinCost
+                score = score + 1000
+            }
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("tokens").innerHTML = tokens;
+            
+        }
+            
+        function cashout() {
+            if (score >= cashoutCost) {
+                score = score - cashoutCost
+                addToTokens(1)
+            }
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("tokens").innerHTML = tokens;
+        }
+            
+            
+        function fightMasterKohga(amount) {
+            masterKohgaHealth = masterKohgaHealth - amount
+            if (masterKohgaHealth <= 0) {
+                masterKohgaHealth = 100 + 50*masterKohgaWins
+                tokens = tokens + 1+researchAmount
+                masterKohgaWins = masterKohgaWins + 1
+                
+            }
+            document.getElementById("masterKohgaHealth").innerHTML = masterKohgaHealth;
+            document.getElementById("masterKohgaWins").innerHTML = masterKohgaWins;
+            document.getElementById("reward").innerHTML = reward;
+            document.getElementById("tokens").innerHTML = tokens;
+        }    
+        
+        
+            
+        setInterval(function(){
+            fightMasterKohga(glitchAmount)
+            fightMasterKohga(linkAmount*10)
+        }, 1000)    
+            
+            
+            
+        setInterval(function() {
+            addToScore(pps)
+        }, 1000)
+            
+       
+        
+            
+        
+        
+            
+            
+        setInterval(function() {
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("rebirths").innerHTML = rebirths;
+            document.getElementById("tulins").innerHTML = tulins;
+            document.getElementById("tulinCost").innerHTML = tulinCost;
+            document.getElementById("yunobos").innerHTML = yunobos;
+            document.getElementById("yunoboCost").innerHTML = yunoboCost;
+            document.getElementById("sidons").innerHTML = sidons;
+            document.getElementById("sidonCost").innerHTML = sidonCost;
+            document.getElementById("rebirthCost").innerHTML = rebirthCost;
+            document.getElementById("masterKohgaHealth").innerHTML = masterKohgaHealth;
+            document.getElementById("tokens").innerHTML = tokens;
+            document.getElementById("researchCost").innerHTML = researchCost;
+            document.getElementById("researchAmount").innerHTML = researchAmount;
+            document.getElementById("pps").innerHTML = pps;
+            document.getElementById("dpc").innerHTML = dpc;
+            document.getElementById("glitchAmount").innerHTML = glitchAmount;
+            document.getElementById("glitchCost").innerHTML = glitchCost;
+            document.getElementById("reward").innerHTML = reward;
+            document.getElementById("masterKohgaWins").innerHTML = masterKohgaWins;
+            document.getElementById("ppc").innerHTML = clickups;
+        }, 1) 
+            
+            
+            function aprilfoolz2024() {
+                score = Infinity
+                document.getElementById("score").innerHTML = score
+            }
+            
+            
+        function changeupamount(amount){
+            upamount = amount
+            
+        }
+            
+            
+            
+        </script>
+        <hr>
+        
+        <h2 style="font-family: cursive">Stats</h2>
+        <p style="font-family: cursive">Rupees Per Click: <span id="ppc">0</span></p>
+        <p style="font-family: cursive">Automatic Rupees Per Second: <span id="pps">0</span></p>
+        
+        
+        
+        
+        <!--<button onclick="aprilfoolz2024();"
+                style="font-family: cursive; background-color: aquamarine">april foolz</button>-->
+        
+    </body>
+    
+</html>   
+    
+    
+    
+    
