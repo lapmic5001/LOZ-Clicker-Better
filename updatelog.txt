@@ -1,3 +1,9 @@
+version 1.1.5
+• vhanged favicon to link
+
+version 1.1.4
+• deleted a singular line!
+
 version 1.1.3
 • fixed bug in which not having parentheses broke everything (me being really mad)
 
