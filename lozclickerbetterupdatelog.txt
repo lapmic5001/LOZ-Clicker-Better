@@ -1,3 +1,7 @@
+version 1.2.1
+• deleted many lines of code that were empty
+• imaged image errors
+
 version 1.2.0
 • added main file
 • added navigation elements to the main.html file
