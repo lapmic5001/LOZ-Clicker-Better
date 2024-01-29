@@ -1,5 +1,8 @@
+version 1.1.6
+• changed "vhanged" in update log under v1.1.5 im sorry i had to
+
 version 1.1.5
-• vhanged favicon to link
+• changed favicon to link
 
 version 1.1.4
 • deleted a singular line!
