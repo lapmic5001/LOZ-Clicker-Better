@@ -1,3 +1,6 @@
+version 1.1.7
+• changed the misspelled "ling.jpeg" to "Images/link.jpeg"
+
 version 1.1.6
 • changed "vhanged" in update log under v1.1.5 im sorry i had to
 
