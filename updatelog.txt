@@ -1,3 +1,7 @@
+version 1.1.9
+• changed dpc to dps
+• removed another line (will help with lag like crazy)
+
 version 1.1.8
 • changed "tokens" to "zonaite" because tokens were in "SkibidiToiletClickerBetter"
 

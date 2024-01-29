@@ -102,7 +102,7 @@
         
         <button style="background-color: white" onclick="buyGlitch()"><h4>Zonai Construct</h4><img src="Images/construct.jpeg" alt="zonai construct" width="120" height="100"><p style="font-family: cursive">Cost: <span id="glitchCost">2</span> Zonaite</p><p style="font-family: cursive">Amount: <span id="glitchAmount">0</span></p><p>does damage to<br>Master Kohga<br>for you! (1 dpc)</p></button>
         
-        <button style="background-color: white" onclick="buyLink()"><h4>Hire Link</h4><img src="Images/link.jpeg" alt="glitch plungerman" width="100" height="100"><p style="font-family: cursive">Cost: <span id="linkCost">5</span> Zonaite</p><p style="font-family: cursive">Amount: <span id="linkAmount">0</span></p><p>does damage to<br>Master Kohga<br>for you! (10 dpc)</p></button>
+        <button style="background-color: white" onclick="buyLink()"><h4>Hire Link</h4><img src="Images/link.jpeg" alt="lonk" width="100" height="100"><p style="font-family: cursive">Cost: <span id="linkCost">5</span> Zonaite</p><p style="font-family: cursive">Amount: <span id="linkAmount">0</span></p><p>does damage to<br>Master Kohga<br>for you! (10 dpc)</p></button>
         
         <button style="background-color: white" onclick="cashin()"><h4>Cash-in</h4><img src="Images/rupee.jpeg" alt="cash your money in" width="100" height="100"><p style="font-family: cursive">Cost: <span id="cashinCost">1</span> Zonaite</p><p style="font-family: cursive">Gives 1000 Rupees</p><p>cash your tokens<br>in for Rupees!<br>nice!</p></button>
         
@@ -149,6 +149,7 @@
         var upamount = 1;
         var linkCost = 5;    
         var linkAmount = 0;
+        var dps = 0;
             
             
             
@@ -253,7 +254,7 @@
             if (tokens >= glitchCost) {
             tokens = tokens - glitchCost
             glitchAmount = glitchAmount + 1
-            dpc = dpc + 1
+            dps = dps + 1
             
             }
             document.getElementById("glitchAmount").innerHTML = glitchAmount;
@@ -265,7 +266,9 @@
             if (tokens >= linkCost)
             tokens = tokens - linkCost
             linkAmount = linkAmount + 1
-            dpc = dpc + 10
+            dps = dps + 10
+            document.getElementById("linkAmount").innerHTML = linkAmount
+            document.getElementById("tokens").innerHTML = tokens
         }   
         
         
@@ -363,8 +366,7 @@
         
             
         setInterval(function(){
-            fightMasterKohga(glitchAmount)
-            fightMasterKohga(linkAmount*10)
+            fightMasterKohga(dps)
         }, 1000)    
             
             
