@@ -1,3 +1,6 @@
+version 1.1.8
+• changed "tokens" to "zonaite" because tokens were in "SkibidiToiletClickerBetter"
+
 version 1.1.7
 • changed the misspelled "ling.jpeg" to "Images/link.jpeg"
 
